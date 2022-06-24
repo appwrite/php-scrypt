@@ -1,0 +1,9 @@
+binop_separator="Front"
+brace_style="PreferSameLine"
+condense_wildcard_suffixes=true
+merge_imports=true
+space_after_colon=false
+struct_lit_single_line=false
+tab_spaces=2
+use_field_init_shorthand=true
+use_try_shorthand=true
