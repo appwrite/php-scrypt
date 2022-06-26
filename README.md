@@ -1,6 +1,6 @@
 #  scrypt-php
 
-A PHP Extension written in Rust to create scrypt password hashes
+A simple PHP Extension written in Rust to create scrypt password hashes.
 
 ## Usage
 Using the scrypt extension is easy, just add the extension to your PHP installation and use the scrypt functions like so:
