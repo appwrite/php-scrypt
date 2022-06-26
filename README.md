@@ -16,6 +16,7 @@ Using the scrypt extension is easy, just add the extension to your PHP installat
 **/
 
 $hash = \scrypt("password", "salt", 32768, 8, 1, 64);
+\var_dump("Your hash is " . $hash);
 ```
 
 ## Building the extension
