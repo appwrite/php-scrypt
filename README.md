@@ -29,7 +29,7 @@ cargo build --release
 to build a release version of the extension
 
 ### Building for Alpine
-While writing this extension we found out that [rust in general](https://github.com/rust-lang/rust/issues/59302) still has a few issues with musl libc found in Alpine. It is possible to build this project successfully by using a alternative linker and building on a gnu based system targetting linux-unknown-musl.
+While writing this extension we found out that [Rust in general](https://github.com/rust-lang/rust/issues/59302) still has a few issues with [musl libc](https://musl.libc.org/) found in Alpine. It is possible to build this project successfully by using an alternative linker and building on a gnu-based system targetting linux-unknown-musl.
 
 We strongly recommend using [zigbuild](https://github.com/messense/cargo-zigbuild) as the linker for this project as we found it's the most stable and easy to install alternate linker.
 
