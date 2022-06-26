@@ -1,5 +1,5 @@
 [package]
-name = "scrypt-php"
+name = "php-scrypt"
 version = "0.0.1"
 edition = "2021"
 
