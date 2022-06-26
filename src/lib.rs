@@ -15,7 +15,7 @@ use ext_php_rs::prelude::*;
 pub fn scrypt(
   password: &str,
   salt: Binary<u8>,
-  cpu_difficulty: Option<u32>,
+  cpu_difficulty: Option<f64>,
   memory_difficulty: Option<u32>,
   parallel_difficulty: Option<u32>,
   len: Option<usize>,
@@ -23,7 +23,7 @@ pub fn scrypt(
   let password = password.as_bytes();
 
   let n = match cpu_difficulty {
-    Some(data) => fast_math::log2(data as f32) as u8,
+    Some(data) => data.log2() as u8,
     None => 15, // 32768
   };
   let r = memory_difficulty.unwrap_or(8);

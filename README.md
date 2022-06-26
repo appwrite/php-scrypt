@@ -22,11 +22,10 @@ $hash = \scrypt("password", "salt", 32768, 8, 1, 64);
 ## Building the extension
 Building this extension requires that you have a version of PHP installed that has the `php-config` command.
 
-After all the prequisites are met simply run
+After all the prequisites are met simply run the following command to build a release version of the extension:
 ```sh
 cargo build --release
 ```
-to build a release version of the extension
 
 ### Building for Alpine
 While writing this extension we found out that [Rust in general](https://github.com/rust-lang/rust/issues/59302) still has a few issues with [musl libc](https://musl.libc.org/) found in Alpine. It is possible to build this project successfully by using an alternative linker and building on a gnu-based system targetting linux-unknown-musl.
@@ -48,6 +47,9 @@ This will produce a .so file similar to a normal build.
 **Matej Bačo**
 
 -   [https://github.com/meldiron](https://github.com/meldiron)
+
+**Eldad Fux**
+-   [https://github.com/eldadfux](https://github.com/eldadfux)
 
 ## Copyright and license
 
