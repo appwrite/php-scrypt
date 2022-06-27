@@ -2,8 +2,30 @@
 
 A simple PHP Extension written in Rust to create scrypt password hashes.
 
+## Installation
+Once you have a compiled version, either through a release or building it yourself. You can install the extension by moving it to your PHP extension directory which is usually `/usr/local/lib/php/extensions/`. on Linux and `C:\php\extensions` on Windows.
+
+Next you need to add the extension to your php.ini file.
+
+MacOS:
+```php
+extension=libphp_scrypt.dylib
+```
+
+Linux:
+```php
+extension=libphp_scrypt.so
+```
+
+Windows:
+```php
+extension=libphp_scrypt.dll
+```
+
+After that the extension will be available to you, check out **Usage** below to see how to use it.
+
 ## Usage
-Using the scrypt extension is easy, just add the extension to your PHP installation and use the scrypt functions like so:
+Using the scrypt extension is easy, there is only one function in this extension the usage is as follows:
 ```php
 <?php
 /**
