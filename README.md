@@ -3,7 +3,7 @@
 A simple PHP Extension written in Rust to create scrypt password hashes.
 
 ## Installation
-Once you have a compiled version, either through a release or building it yourself. You can install the extension by moving it to your PHP extension directory which is usually `/usr/local/lib/php/extensions/`. on Linux and `C:\php\extensions` on Windows.
+Once you have a compiled version, either through a release or building it yourself, you can install the extension by moving it to your PHP extension directory which is usually `/usr/local/lib/php/extensions/`. on Linux and `C:\php\extensions` on Windows.
 
 Next you need to add the extension to your php.ini file.
 
