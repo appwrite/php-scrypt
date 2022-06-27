@@ -52,11 +52,11 @@ cargo build --release
 ### Building for Alpine
 While writing this extension we found out that [Rust in general](https://github.com/rust-lang/rust/issues/59302) still has a few issues with [musl libc](https://musl.libc.org/) found in Alpine. It is possible to build this project successfully by using an alternative linker and building on a gnu-based system targetting linux-unknown-musl.
 
-We strongly recommend using [zigbuild](https://github.com/messense/cargo-zigbuild) as the linker for this project as we found it's the most stable and easy to install alternate linker.
+We strongly recommend using [zigbuild](https://github.com/messense/cargo-zigbuild) as the linker for this project as we found it's the most stable and easy to install alternate linker. we also use the "-C target-feature=crt-static" compiler flags to aid with building on musl as stated [here](https://github.com/rust-lang/rust/issues/59302).
 
 The build command for these platforms will look like so:
 ```sh
-cargo zigbuild --workspace --all-targets --target x86_64-unknown-linux-musl --release
+RUSTFLAGS="-C target-feature=-crt-static" cargo zigbuild --workspace --all-targets --target x86_64-unknown-linux-musl --release
 ```
 This will produce a .so file similar to a normal build.
 
