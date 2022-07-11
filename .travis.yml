@@ -11,11 +11,6 @@ services:
 
 os: linux
 
-language: php
-
-php:
-  - 8.1
-
 notifications:
   email:
     - team@appwrite.io
@@ -27,7 +22,6 @@ before_install:
     fi
 install:
   - docker --version
-  - composer install
 
 script:
   - docker-compose up
