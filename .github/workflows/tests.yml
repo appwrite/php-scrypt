@@ -25,6 +25,7 @@ jobs:
         docker pull php:8.0.18-cli
         docker pull php:8.0.18-cli-alpine3.15
         docker compose build --progress=plain
+        docker compose up -d
         sleep 10
     - name: Run Tests (GNU Based Linux)
       run: docker compose exec -T tests_gnu bash -c "./vendor/bin/phpunit"

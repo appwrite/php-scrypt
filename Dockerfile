@@ -16,7 +16,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 ENV PATH=/root/.cargo/bin:$PATH
 
-RUN apt-get update && apt-get install clang-11 build-essential git curl tree -y
+RUN apt-get update && apt-get install clang-11 build-essential git curl -y
 RUN rustup target add $(uname -m)-unknown-linux-musl
 
 RUN mkdir /src/
@@ -40,8 +40,6 @@ ENV PATH=/tmp/zig:$PATH
 # Build alpine and gnu targets
 RUN CARGO_NET_GIT_FETCH_WITH_CLI=true cargo build && \
     cargo zigbuild --workspace --target $(uname -m)-unknown-linux-musl
-
-RUN tree
 
 RUN cp target/$(uname -m)-unknown-linux-musl/debug/libphp_scrypt.so target/libscrypt_php_alpine.so
 
