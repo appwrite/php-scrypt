@@ -31,10 +31,7 @@ pub fn scrypt(
 
   let params = scrypt::Params::new(n, r, p).map_err(|e| format!("{}", e))?;
 
-  let len = match len {
-    Some(data) => data,
-    None => 8,
-  };
+  let len = len.unwrap_or(8);
 
   let mut password_hash: Vec<u8> = vec![0; len];
 
