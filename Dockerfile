@@ -58,7 +58,7 @@ RUN echo extension=libphp_scrypt.so >> /usr/local/etc/php/conf.d/libphp_scrypt.i
 COPY ./phpunit.xml /src/phpunit.xml
 COPY ./tests /src/tests
 
-ENTRYPOINT ["/src/vendor/bin/phpunit"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
 
 FROM php:8.0.18-cli-alpine3.15 as alpine
 
@@ -72,4 +72,4 @@ RUN echo extension=libphp_scrypt.so >> /usr/local/etc/php/conf.d/libphp_scrypt.i
 COPY ./phpunit.xml /src/phpunit.xml
 COPY ./tests /src/tests
 
-ENTRYPOINT ["/src/vendor/bin/phpunit"]
+ENTRYPOINT ["tail", "-f", "/dev/null"]
