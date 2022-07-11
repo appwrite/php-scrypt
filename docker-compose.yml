@@ -11,7 +11,7 @@ services:
     volumes:
       - ./:/usr/src/code
 
-  test_alpine:
+  tests_alpine:
     container_name: tests_alpine
     build:
       context: .
