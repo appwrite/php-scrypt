@@ -28,10 +28,10 @@ jobs:
         docker compose up -d
         sleep 10
     - name: Run Tests (GNU Based Linux)
-      run: docker compose exec -T tests_gnu bash -c "cd /src/ && /src/vendor/bin/phpunit"
+      run: docker compose exec -T tests_gnu sh -c "cd /src/ && /src/vendor/bin/phpunit"
 
     - name: Run Tests (Alpine Linux)
-      run: docker compose exec -T tests_alpine bash -c "cd /src/ && /src/vendor/bin/phpunit"
+      run: docker compose exec -T tests_alpine sh -c "cd /src/ && /src/vendor/bin/phpunit"
 
     - name: Teardown
       if: always()
