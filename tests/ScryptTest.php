@@ -19,6 +19,7 @@ final class ScryptTest extends TestCase
     {
         $hash = scrypt('password', 'salt');
 
+        $this->assertEquals(strlen($hash), 16);
         $this->assertEquals('4bc0fd507e93a600', $hash);
     }
 
@@ -29,6 +30,7 @@ final class ScryptTest extends TestCase
     {
         $hash = scrypt('password', 'salt', 16384, 8, 1, 64);
 
+        $this->assertEquals(strlen($hash), 128);
         $this->assertEquals('745731af4484f323968969eda289aeee005b5903ac561e64a5aca121797bf7734ef9fd58422e2e22183bcacba9ec87ba0c83b7a2e788f03ce0da06463433cda6', $hash);
     }
 

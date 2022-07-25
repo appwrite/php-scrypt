@@ -32,10 +32,3 @@ jobs:
 
     - name: Run Tests (Alpine Linux)
       run: docker compose exec -T tests_alpine sh -c "cd /src/ && /src/vendor/bin/phpunit"
-
-    - name: Teardown
-      if: always()
-      run: |
-        docker ps -aq | xargs docker rm --force || true
-        docker volume prune --force || true
-        docker network prune --force || true
