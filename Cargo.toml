@@ -1,0 +1,14 @@
+[package]
+name = "php-scrypt"
+version = "0.0.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ext-php-rs = "0.7.4"
+scrypt = { version = "0.10.0", default-features = false }
+hex = "0.4.3"
+
+[lib]
+crate-type = ["cdylib"]

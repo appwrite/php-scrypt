@@ -1,0 +1,35 @@
+{
+    "name": "appwrite/php-scrypt-tests",
+    "description": "Unit tests for php-scrypt",
+    "type": "library",
+    "keywords": [],
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Eldad Fux",
+            "email": "eldad@appwrite.io"
+        },
+        {
+            "name": "Bradley Schofield",
+            "email": "bradley@appwrite.io"
+        },
+        {
+            "name": "Matej Bačo",
+            "email": "matej@appwrite.io"
+        }
+    ],
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "swoole/ide-helper": "4.8.0",
+        "vimeo/psalm": "4.0.1"
+    }
+}

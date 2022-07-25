@@ -1,0 +1,20 @@
+
+version: '3.1'
+
+services:
+
+  tests_gnu:
+    container_name: tests_gnu
+    build:
+      context: .
+      target: gnu
+    volumes:
+      - ./:/usr/src/code
+
+  tests_alpine:
+    container_name: tests_alpine
+    build:
+      context: .
+      target: alpine
+    volumes:
+      - ./:/usr/src/code
