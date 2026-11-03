@@ -1,5 +1,7 @@
 use ext_php_rs::binary::Binary;
+use ext_php_rs::convert::FromZval;
 use ext_php_rs::prelude::*;
+use ext_php_rs::types::Zval;
 
 /// Creates a scrypt password hash.
 ///
@@ -14,13 +16,14 @@ use ext_php_rs::prelude::*;
 #[php_function]
 pub fn scrypt(
   password: &str,
-  salt: Binary<u8>,
+  salt: &Zval,
   cpu_difficulty: Option<f64>,
   memory_difficulty: Option<u32>,
   parallel_difficulty: Option<u32>,
   len: Option<usize>,
 ) -> Result<String, String> {
   let password = password.as_bytes();
+  let salt = Binary::<u8>::from_zval(salt).ok_or("Invalid value given for argument `salt`.")?;
 
   let n = match cpu_difficulty {
     Some(data) => data.log2() as u8,
@@ -46,5 +49,5 @@ pub fn scrypt(
 // Required to register the extension with PHP.
 #[php_module]
 pub fn module(module: ModuleBuilder) -> ModuleBuilder {
-  module
+  module.function(wrap_function!(scrypt))
 }

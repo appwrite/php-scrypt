@@ -12,7 +12,7 @@ A simple PHP Extension written in Rust to create scrypt password hashes. Support
 ### Compiling Requirements
 - Linux, MacOS or Windows-based operating system
 - Latest Version of Rust Stable
-- PHP 8.0 or newer
+- PHP 8.1 or newer
 - Clang 5.0 or Later
 
 ### Notes for Windows compilation
