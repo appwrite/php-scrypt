@@ -24,6 +24,11 @@
             "Tests\\": "tests/"
         }
     },
+    "config": {
+        "platform": {
+            "php": "8.0.0"
+        }
+    },
     "require": {
         "php": ">=8.0"
     },
