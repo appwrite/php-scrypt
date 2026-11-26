@@ -1,4 +1,4 @@
-FROM composer:2.0 as composer
+FROM composer:2.0@sha256:b3703ad1ca8e91a301c2653844633a9aa91734f3fb278c56e2745f58965713f3 as composer
 
 COPY composer.lock /src/
 COPY composer.json /src/
@@ -10,7 +10,7 @@ WORKDIR /src/
 
 RUN composer install --ignore-platform-reqs --optimize-autoloader --prefer-dist
 
-FROM php:8.5-cli as build
+FROM php:8.5-cli@sha256:e33c9c494e41d56e18c4e9609b98dbdeac68682916cd7d2917582492a6e15618 as build
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
@@ -44,7 +44,7 @@ RUN CARGO_NET_GIT_FETCH_WITH_CLI=true cargo build && \
 RUN cp target/$(uname -m)-unknown-linux-musl/debug/libphp_scrypt.so target/libscrypt_php_alpine.so
 
 # Create GNU Image
-FROM php:8.5-cli as gnu
+FROM php:8.5-cli@sha256:e33c9c494e41d56e18c4e9609b98dbdeac68682916cd7d2917582492a6e15618 as gnu
 
 WORKDIR /usr/src/code
 
@@ -59,7 +59,7 @@ COPY ./tests /src/tests
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
 
-FROM php:8.5-cli-alpine as alpine
+FROM php:8.5-cli-alpine@sha256:b9d7db51a2b83c41420ba04de0b90e6078d4b6440e5cc480fc4dc51b18e0b6db as alpine
 
 WORKDIR /usr/src/code
 
